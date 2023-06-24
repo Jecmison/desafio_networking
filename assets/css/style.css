@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+/*definición universal y saneamiento*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.dashboard {
+    display: flex;
+}
+
+.dashboard-menu {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /*para que se me muestre solo en una columna*/
+    border: 2px solid #e8ebe4;
+}
+
+.dashboard-menu-user {
+    width: 100%;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    /*Esto se utiliza para separar datos entre si*/
+    align-items: center;
+    border-bottom: 2px solid #e8ebe4;
+}
+
+.dashboard-menu-user img {
+    border-radius: 50%;
+    width: 25%;
+    height: 95%;
+}
+
+.dashboard-menu-user-datos {
+    flex-grow: 1;
+    /*con este flex acerco el texto a la foto*/
+
+}
+
+.dashboard-menu-user-datos h2 {
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.dashboard-menu-user-datos p {
+    font-size: 14px;
+    color: #5f5e5e;
+}
+
+.dashboard-menu-user-iconos {
+    display: flex;
+    flex-direction: row;
+    /*atributo para adaptar a pantalla*/
+    gap: 12px;
+}
+
+.dashboard-menu-user-iconos i {
+    font-size: 25px;
+    color: #5f5e5e;
+}
+
+.dashboard-menu-newchat {
+    /*Para el botton*/
+    padding: 50px 50px;
+    display: flex;
+    border-bottom: 2px solid #e8ebe4;
+}
+
+.btn {
+    /*se separa el boton del color*/
+    padding: 20px 60px;
+    margin: auto;
+    border: none;
+    cursor: pointer;
+    /*la manito en el botton*/
+    transition: .5s;
+    /*para la transición en el cambio de colores del botón*/
+}
+
+.btn-purple {
+    /*para color del boton*/
+    background-color: #a491d2;
+    color: #fff;
+}
+
+/*con lo siguiente modifico colores del boton para cuando coloco cursor y clickeo*/
+.btn-purple:hover {
+    background-color: #5f5e5e;
+    box-shadow: 3px 3px 10px #5f5e5e;
+}
+
+.btn-purple:focus {
+    background-color: #bec188;
+    box-shadow: 4px 4px 4px #5f5e5e;
+    /*efectos del boton al hacer click*/
+}
+
+.font-medium {
+    /*para texto del button*/
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.dashboard-menu-contactos {
+    border-bottom: 4px solid #f8f8f8;
+    height: 100%;
+    overflow-y: auto;
+    /*esto lo que hace es inmobilizar la sección de arriba, podria ser scroll si quiero ver la barra siempre*/
+}
+
+.dashboard-menu-contactos::-webkit-scrollbar {
+    /*Una pseudoclase para eliminar la barra de desplazamiento*/
+    display: none;
+}
+
+.dashboard-menu-contactos--item {
+    width: 100%;
+    height: 100px;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 20px;
+    border-bottom: 2px solid #e8ebe4;
+    /*con borde abajo para que separe cada caja*/
+}
+
+.dashboard-menu-contactos--item img {
+    /*configuro la imagen del sector usuario, como hijo*/
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.dashboard-menu-contactos1 h2 {
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.dashboard-menu-contactos1 p {
+    font-size: 14px;
+    color: #494949;
+}
+
+.dashboard-chat {
+    width: 100vw;
+    display: none;
+    /*para responsivo*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #f8f8f8;
+}
+
+.dashboard-chat h1 {
+    font-size: 50px;
+}
+
+.dashboard-chat p {
+    text-align: center;
+    font-size: 18px;
+}
+
+.dashboard-chat img {
+    width: 20rem;
+}
+
+/*desde aqui voy a establecer puntos de quiebre: propiedades que quiero reemplazar cuando se abre en mobile o pc*/
+@media (min-width: 768px) {
+
+    /*Media query para pasar de 768px a una sola columna*/
+    .dashboard-menu {
+        width: 450px;
+    }
+
+    .dashboard-chat {
+        display: flex
+    }
+}
